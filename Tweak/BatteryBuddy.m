@@ -40,11 +40,11 @@ CGFloat override__UIBatteryView_chargePercent(_UIBatteryView* self, SEL _cmd) {
 	CGFloat orig = orig__UIBatteryView_chargePercent(self, _cmd);
 	int actualPercentage = orig * 100;
 
-	if (actualPercentage <= 20 && !isCharging) {
+	if (actualPercentage <= 40 && !isCharging) {
 		[[self batteryBuddyStatusBarIconImageView] setImage:[UIImage imageWithContentsOfFile:[kDocumentPath stringByAppendingString:@"/StatusBarSad.png"]]];
-	} else if (actualPercentage <= 49 && !isCharging) {
+	} else if (actualPercentage <= 69 && !isCharging) {
 		[[self batteryBuddyStatusBarIconImageView] setImage:[UIImage imageWithContentsOfFile:[kDocumentPath stringByAppendingString:@"/StatusBarNeutral.png"]]];
-	} else if (actualPercentage > 49 && !isCharging) {
+	} else if (actualPercentage > 69 && !isCharging) {
 		[[self batteryBuddyStatusBarIconImageView] setImage:[UIImage imageWithContentsOfFile:[kDocumentPath stringByAppendingString:@"/StatusBarHappy.png"]]];
 	} else if (isCharging) {
 		[[self batteryBuddyStatusBarIconImageView] setImage:[UIImage imageWithContentsOfFile:[kDocumentPath stringByAppendingString:@"/StatusBarHappy.png"]]];

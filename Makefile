@@ -3,7 +3,7 @@ export SYSROOT = $(THEOS)/sdks/iPhoneOS14.4.sdk
 
 ifneq ($(THEOS_PACKAGE_SCHEME), rootless)
 export TARGET = iphone:clang:14.4:13.0
-export PREFIX = $(THEOS)/toolchain/Xcode.xctoolchain/usr/bin/
+export PREFIX = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/
 else
 export TARGET = iphone:clang:14.4:15.0
 endif
